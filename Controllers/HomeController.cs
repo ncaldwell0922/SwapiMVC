@@ -7,6 +7,7 @@ namespace SwapiMVC.Controllers;
 public class HomeController : Controller
 {
     private readonly ILogger<HomeController> _logger;
+    private static Random _random = new Random();
 
     public HomeController(ILogger<HomeController> logger)
     {
@@ -15,6 +16,8 @@ public class HomeController : Controller
 
     public IActionResult Index()
     {
+        string[] names = new[] { "Autumn", "Alecx", "Tom", "Kenn", "Paul"};
+        string name = names[_random.Next(0, names.Length)];
         return View();
     }
 
