@@ -9,13 +9,14 @@ namespace SwapiMVC.Controllers
 {
     public class PeopleController : Controller
     {
+        private readonly HttpClient _httpClient;
+        public PeopleController(IHttpClientFactory httpClientFactory)
+        {
+
+        }
         public IActionResult Index()
         {
             return View();
-        }
-        public PeopleController(IHttpClientFactory httpClientFactory)
-        {
-            
         }
     }
 }
